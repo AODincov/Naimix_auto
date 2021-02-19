@@ -2,7 +2,7 @@ from datetime import time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
 
-
+# todo wtf?
 class AssertsSteps:
 
     @staticmethod

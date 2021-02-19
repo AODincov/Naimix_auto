@@ -19,21 +19,25 @@ class BaseSteps:
             len_int -= 1
         return i
 
+#todo move to WebElement
     @staticmethod
     def den_random_str(len_str):
         i = ''.join(random.choice(ascii_uppercase) for i in range(len_str))
         return i
 
+    # todo move to WebElement
     @staticmethod
     def select_from_dropdown(driver, dropdown_path, field):
         dropdown = Select(driver.find_element(dropdown_path))
         dropdown.select_by_visible_text(field)
 
+    # todo move to WebElement
     @staticmethod
     def clear_input(driver, web_element):
         driver.wait.until(ec.visibility_of_element_located(web_element.get())).send_keys(
             Keys.CONTROL + "a" + Keys.DELETE)
 
+    # wtf?
     @staticmethod
     def explicit_expected_element(driver, web_element):
         try:

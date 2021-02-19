@@ -39,11 +39,13 @@ class BaseTest:
         self.driver.wait = WebDriverWait(self.driver, 60)
         yield "resource"
 
+        # todo why this function nested
         def teardown():
             self.driver.close()
 
         request.addfinalizer(teardown)
 
+    # todo this step should not be here
     def login(self, login, password):
         try:
             self.driver.wait.until(ec.element_to_be_clickable(WebElement("//input[@placeholder='E-mail']").get()))
